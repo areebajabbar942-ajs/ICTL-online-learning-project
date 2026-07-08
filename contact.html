@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact Us</title>
+
+<style>
+:root{
+  --accent:#14c3c3;
+  --text:#ffffff;
+  --muted:rgba(255,255,255,0.8);
+  --card-bg: rgba(0,0,0,0.6);
+  --border: rgba(255,255,255,0.2);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* BODY (same as About page) */
+body{
+  margin:0;
+  
+
+  background: url("https://images.unsplash.com/photo-1720118727698-65b0345b8708") center/cover no-repeat fixed;
+
+  background-color:#272828;
+  color:var(--text);
+  padding:40px 20px;
+}
+
+ /* TOP RIGHT NAVBAR */
+.top-buttons{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+.top-buttons a{
+  background: var(--accent);
+  color:#000;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+/* Hover Effect */
+.top-buttons a:hover{
+  transform: translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* MAIN CONTAINER (same style as About page) */
+.container{
+  max-width:900px;
+  margin:80px auto 0 auto;
+  background:var(--card-bg);
+  padding:40px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  backdrop-filter: blur(10px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* TITLE */
+h1{
+  margin-top:0;
+  font-size:40px;
+  color:var(--accent);
+  text-align:center;
+}
+
+p{
+  font-size:17px;
+  line-height:1.7;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* CONTACT INFO BOX */
+.info-box{
+  margin-top:30px;
+  padding:20px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--border);
+  text-align:center;
+}
+
+.info-box p{
+  margin:10px 0;
+  color:var(--muted);
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  h1{ font-size:30px; }
+  .container{ padding:25px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP RIGHT BUTTONS -->
+<div class="top-buttons">
+  <a href="about.html">About Us</a>
+  <a href="feedback.html">Feedback</a>
+</div>
+
+<div class="container">
+
+  <h1>Contact Us</h1>
+
+  <p>We are here to help you. Feel free to reach out anytime!</p>
+
+  <!-- CONTACT INFO -->
+  <div class="info-box">
+    <p>📞 <strong>Phone:</strong> +92 300 1234567</p>
+    <p>📧 <strong>Email:</strong> info@onlinelearningacademy.com</p>
+    <p>📍 <strong>Address:</strong> 123 Learning St, Karachi, Pakistan</p>
+  </div>
+
+</div>
+
+</body>
+</html>

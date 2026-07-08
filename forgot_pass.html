@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Forgot Password - Online Learning Academy</title>
+
+<style>
+  :root{
+    --accent:#14c3c3;
+  }
+
+  body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: url('https://images.pexels.com/photos/27301621/pexels-photo-27301621.png') center/cover no-repeat fixed;
+  }
+
+  .card{
+    width:100%;
+    max-width:400px;
+    padding:40px;
+    border-radius:12px;
+    background:rgba(9,9,9,0.45);
+    backdrop-filter: blur(25px);
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    color:#fff;
+  }
+
+  h2{
+    text-align:center;
+    color:var(--accent);
+    margin-bottom:15px;
+  }
+
+  p{
+    text-align:center;
+    font-size:14px;
+    margin-bottom:25px;
+    opacity:0.9;
+  }
+
+  input{
+    width:100%;
+    padding:12px;
+    border-radius:6px;
+    border:1px solid rgba(255,255,255,0.2);
+    background:#222;
+    color:#fff;
+    margin-bottom:15px;
+  }
+
+  input::placeholder{
+    color:rgba(255,255,255,0.6);
+  }
+
+  button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:var(--accent);
+    color:#000;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+  }
+
+  button:hover{
+    background:#0fc3c3;
+  }
+
+  .back{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    color:var(--accent);
+    text-decoration:none;
+    font-size:14px;
+  }
+
+  .back:hover{
+    text-decoration:underline;
+  }
+
+  .msg{
+    text-align:center;
+    font-size:13px;
+    margin-top:10px;
+    color:#ccc;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h2>Forgot Password</h2>
+  <p>Enter your email and we’ll send you a reset link.</p>
+
+  <form onsubmit="return sendReset()">
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <button type="submit">Send Reset Link</button>
+  </form>
+
+  <div class="msg" id="msg"></div>
+
+  <a class="back" href="login.html">← Back to Login</a>
+
+</div>
+
+<script>
+function sendReset(){
+  const email = document.getElementById("email").value;
+  document.getElementById("msg").innerText =
+    "Reset link has been sent to " + email;
+  return false;
+}
+</script>
+
+</body>
+</html>

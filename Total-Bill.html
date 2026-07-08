@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Invoice Payment</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: url('https://images.pexels.com/photos/5912586/pexels-photo-5912586.jpeg') center/cover no-repeat fixed;
+  color:#fff;
+
+  display:flex;
+  justify-content:center;  /* CENTER HORIZONTALLY */
+  align-items:center;      /* CENTER VERTICALLY */
+  min-height:100vh;
+}
+
+/* MAIN LAYOUT */
+.container{
+  display:flex;
+  gap:40px;
+  justify-content:center;  /* center both cards */
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+/* BOTH CARDS */
+.card{
+  width:420px; /* bigger */
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:14px;
+  backdrop-filter: blur(50px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.card{
+  transition:0.3s;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+}
+
+/* HEADINGS */
+h2{
+  font-weight: 800;
+  font-size: 25px;
+  color:#14c3c3;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* Bank Transfer Instructions */
+.bank-heading{
+  font-weight: 800;
+  font-size: 21px;
+  margin-top:20px;
+  color:#14c3c3;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* ROW */
+.row{
+  display:flex;
+  justify-content:space-between;
+  margin:10px 0;
+}
+
+/* TOTAL */
+.total{
+  border-top:1px solid #555;
+  margin-top:10px;
+  padding-top:10px;
+  font-weight:bold;
+  font-size:18px;
+}
+
+/* TEXT */
+.info{
+  font-size:16px;
+  margin:5px 0;
+  color:#ccc;
+}
+
+/* FORM */
+input{
+  width:100%;
+  padding:11px;
+  margin:8px 0;
+  border-radius:5px;
+  border:none;
+  background:#222;
+  color:#fff;
+}
+
+/* FILE INPUT */
+input[type="file"]{
+  background:#111;
+}
+
+/* BUTTON */
+.submit-btn{
+  display:block;
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  background:#14c3c397;
+  color:#000;
+  font-weight:bold;
+  border-radius:6px;
+  text-align:center;
+  text-decoration:none; /* IMPORTANT */
+}
+
+.submit-btn:hover{
+  opacity:0.85;
+}
+
+/* TEXT UNDER BUTTON */
+.submit-text{
+  margin:4px 0 0 0;   /* NO GAP */
+  font-size:15px;
+  color:#ccc;
+  text-align:center;
+}
+
+.upload-box{
+  text-align:center;
+  margin-top:10px;
+}
+
+/* BUTTON */
+.upload-btn{
+  display:inline-block;
+  padding:12px 20px;
+  background:#14c3c397;
+  color:#000;
+  font-weight:bold;
+  border-radius:6px;
+  cursor:pointer;
+  position:relative;
+}
+
+/* hide file input */
+.upload-btn input{
+  display:none;
+}
+
+/* TEXT UNDER BUTTON */
+.upload-text{
+  margin:4px 0 0 0;   /* NO SPACE */
+  font-size:15px;
+  color:#ccc;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LEFT: INVOICE -->
+<div class="card">
+
+  <h2>Invoice</h2>
+
+  <div class="info" id="courseName">Course</div>
+
+  <div class="row">
+    <span>Course Fee</span>
+    <span id="courseFee">0</span>
+  </div>
+
+  <div class="row">
+    <span>Misc Fee</span>
+    <span>10000</span>
+  </div>
+
+  <div class="row total">
+    <span>Total</span>
+    <span id="totalFee">0</span>
+  </div>
+
+  <h3 class="bank-heading">Bank Transfer Instructions</h3>
+
+  <div class="info">
+    1. Transfer Rs. <b id="payAmount">0</b> to:
+  </div>
+
+  <div class="info">• Bank Name: Alfalah Bank</div>
+  <div class="info">• Account Title: Online Learning Academy</div>
+  <div class="info">• Account Number: 1234 5678 9101 1121</div>
+  <div class="info">• IBAN: PK12 ABCD 0000 1234 5678 9101 1121</div>
+
+  <div class="info" style="margin-top:10px;">
+    2. Upload your payment receipt on the right.
+  </div>
+
+</div>
+
+<!-- RIGHT: PAYMENT PROOF -->
+<div class="card">
+
+  <h2>Submit Payment Proof</h2>
+
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Your Email">
+  
+  <div class="upload-box">
+    
+    <label class="upload-btn">
+      Upload Receipt
+      <input type="file" id="fileUpload">
+    </label>
+    
+    <p class="upload-text">
+      Upload screenshot/picture of payment receipt
+    </p>
+
+  </div>
+  
+  <a href="thankyou.html" class="submit-btn">Submit</a>
+  
+  <p class="submit-text">
+    Once verified, you will receive access to the course
+  </p>
+
+</div>
+
+</div>
+
+<script>
+let courseName = localStorage.getItem("courseName") || "Not Selected";
+let courseFee = parseInt(localStorage.getItem("courseFee")) || 0;
+
+let total = courseFee + 10000;
+
+document.getElementById("courseName").innerText = courseName;
+document.getElementById("courseFee").innerText = courseFee;
+document.getElementById("totalFee").innerText = total;
+document.getElementById("payAmount").innerText = total;
+</script>
+
+</body>
+</html>
+

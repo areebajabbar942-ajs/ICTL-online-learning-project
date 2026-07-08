@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Team — Online Learning Academy</title>
+
+<style>
+:root{
+  --accent:#14c3c3;
+  --text:#f5f5f5;
+  --muted:rgba(255,255,255,0.75);
+  --card-bg: rgba(255,255,255,0.04);
+  --card-border: rgba(255,255,255,0.08);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+body{
+  margin:0;
+  background: url('https://images.pexels.com/photos/34030124/pexels-photo-34030124.jpeg') center/cover no-repeat fixed;
+  color:var(--text);
+  padding:40px 20px;
+}
+
+/* TOP RIGHT NAVBAR */
+.top-buttons{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+.top-buttons a{
+  background: var(--accent);
+  color:#000;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+.top-buttons a:hover{
+  transform: translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* SECTION */
+.team-section{
+  max-width:1200px;
+  margin:auto;
+  backdrop-filter: blur(15px);
+}
+
+.team-header{
+  text-align:center;
+  margin-bottom:30px;
+}
+.team-header h2{
+  font-size:36px;
+  margin:0;
+}
+.team-header p{
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:20px;
+}
+
+/* CARD (NOW CLICKABLE) */
+.card{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border:1px solid var(--card-border);
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+  transition:0.3s;
+  box-shadow:0 6px 18px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+  transform: translateY(-8px);
+  box-shadow:0 18px 40px rgba(0,0,0,0.7);
+}
+
+/* IMAGE */
+.card img{
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid var(--accent);
+  margin-bottom:15px;
+}
+
+/* TEXT */
+.card h3{
+  margin:10px 0 5px 0;
+}
+.card p{
+  color:white;
+  font-size:15px;
+}
+
+.desc{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.6;
+  font-weight:500;
+  text-shadow: 0 2px 6px rgb(0, 0, 0);
+}
+
+.desc strong{
+  color:#fff;
+  font-weight:700;
+}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .grid{ grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width:600px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP RIGHT BUTTONS -->
+<div class="top-buttons">
+  <a href="about.html">About Us</a>
+  <a href="index.html">Courses</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="team-section">
+
+  <div class="team-header">
+    <h2>Our Expert Team</h2>
+    <p>Meet our professional instructors and developers</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- Bilal -->
+    <a href="BV.html" class="card">
+      <img src="BV pic.jpeg" alt="Bilal Vohra">
+      <h3>Bilal Vohra</h3>
+      <p><strong>Web Developer</strong></p>
+      <p class="desc">
+        <strong>Bilal Vohra</strong> is a skilled Web Developer with expertise in 
+        <strong>HTML, CSS, JavaScript</strong>, and modern frontend technologies. 
+        He focuses on building <strong>responsive and user-friendly websites</strong>.
+      </p>
+    </a>
+
+    <!-- Marouf -->
+    <a href="MM.html" class="card">
+      <img src="MM pic.jpeg" alt="Muhammad Marouf">
+      <h3>Muhammad Marouf</h3>
+      <p><strong>C++ / DSA Expert</strong></p>
+      <p class="desc">
+        <strong>Muhammad Marouf</strong> is an expert in 
+        <strong>C++, Data Structures, and Algorithms</strong>. 
+        He simplifies complex concepts and builds strong 
+        <strong>problem-solving skills</strong>.
+      </p>
+    </a>
+
+    <!-- Abdullah -->
+    <a href="abd.html" class="card">
+      <img src="Abd pic.jpeg" alt="Abdullah Ayub">
+      <h3>Dr. Abdullah Ayub</h3>
+      <p><strong>OOP / Python Expert</strong></p>
+      <p class="desc">
+        <strong>Abdullah Ayub</strong> is a passionate 
+        <strong>Python and OOP expert</strong> who teaches 
+        automation and <strong>real-world programming applications</strong>.
+      </p>
+    </a>
+
+    <!-- Ayesha -->
+    <a href="AN.html" class="card">
+      <img src="https://images.pexels.com/photos/7156118/pexels-photo-7156118.jpeg" alt="Ayesha Noor">
+      <h3>Ayesha Noor</h3>
+      <p><strong>Digital Marketing</strong></p>
+      <p class="desc">
+        <strong>Ayesha Noor</strong> specializes in 
+        <strong>SEO, social media, and branding</strong>, helping students grow 
+        using <strong>modern marketing strategies</strong>.
+      </p>
+    </a>
+
+  </div>
+
+</section>
+
+</body>
+</html>

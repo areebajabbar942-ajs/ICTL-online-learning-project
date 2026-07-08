@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login - Online Learning Academy</title>
+
+<style>
+  :root{
+    --accent:#14c3c3;
+    --text:#ffffff;
+  }
+
+  body{
+    margin:0;
+    background: url('https://images.pexels.com/photos/27301621/pexels-photo-27301621.png') center/cover no-repeat fixed;
+    background-color:#343435;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+    font-family: Arial, sans-serif;
+  }
+
+   /* TOP RIGHT NAVBAR */
+.top-buttons{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+.top-buttons a{
+  background: var(--accent);
+  color:#000;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+/* Hover Effect */
+.top-buttons a:hover{
+  transform: translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.6);
+}
+
+  .login-card{
+    background: rgba(9, 9, 9, 0.384);
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(31, 30, 30, 0.253);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .login-card h2{
+    text-align:center;
+    color:var(--accent);
+    margin-bottom:25px;
+  }
+
+  .login-card form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .login-card input{
+    padding:12px;
+    border-radius:6px;
+    border:1px solid rgba(23, 22, 22, 0.2);
+    background:#222;
+    color:#fff;
+  }
+
+  .login-card input::placeholder{
+    color: rgba(255,255,255,0.7);
+  }
+
+  .login-options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+    color:#fff;
+  }
+
+  .login-options a{
+    color:var(--accent);
+    text-decoration:none;
+  }
+
+  .login-card button{
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:var(--accent);
+    color:#000;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+  }
+
+  .login-card button:hover{
+    background:#0fc3c3;
+  }
+
+  .login-card p{
+    text-align:center;
+    color:#fff;
+    font-size:14px;
+  }
+
+  .login-card a{
+    color:var(--accent);
+    text-decoration:none;
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP RIGHT BUTTONS -->
+<div class="top-buttons">
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="login-card">
+  <h2>Login</h2>
+
+  <form action="index.html" method="get">
+
+    <input type="email" placeholder="Email Address" required>
+    <input type="password" placeholder="Password" required>
+
+    <div class="login-options">
+      <label style="display:flex; gap:6px; align-items:center;">
+        <input type="checkbox"> Remember Me
+      </label>
+
+      <a href="forgot_pass.html" style="cursor:pointer;">
+        Forgot Password?
+      </a>
+    </div>
+
+    <button type="submit">Login</button>
+
+  </form>
+
+  <p>Don't have an account? <a href="form.html">Register</a></p>
+</div>
+
+</body>
+</html>
